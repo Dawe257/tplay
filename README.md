@@ -5,6 +5,8 @@ file from the same directory into a playlist, without any library setup.
 
 Decoding is done by `ffmpeg`, so any format it supports plays.
 
+![tplay playing an album](docs/screenshot.png)
+
 ## Usage
 
 ```sh
