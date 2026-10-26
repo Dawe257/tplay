@@ -5,25 +5,47 @@ package main
 import (
 	"fmt"
 	"os"
+	"runtime/debug"
+	"strings"
 
 	tea "github.com/charmbracelet/bubbletea"
 
-	"tplay/internal/audio"
-	"tplay/internal/audio/ffmpeg"
-	"tplay/internal/audio/otoout"
-	"tplay/internal/playlist"
-	"tplay/internal/ui"
+	"github.com/Dawe257/tplay/internal/audio"
+	"github.com/Dawe257/tplay/internal/audio/ffmpeg"
+	"github.com/Dawe257/tplay/internal/audio/otoout"
+	"github.com/Dawe257/tplay/internal/playlist"
+	"github.com/Dawe257/tplay/internal/ui"
 )
 
+// version is set at build time with -ldflags "-X main.version=...". Without
+// it (go install), the module version from the build info is used.
+var version = "dev"
+
 func main() {
+	if len(os.Args) == 2 && os.Args[1] == "--version" {
+		fmt.Println("tplay", buildVersion())
+		return
+	}
 	if len(os.Args) != 2 {
-		fmt.Fprintln(os.Stderr, "usage: tplay <audio file or directory>")
+		fmt.Fprintln(os.Stderr, "usage: tplay <audio file or directory>\n       tplay --version")
 		os.Exit(2)
 	}
 	if err := run(os.Args[1]); err != nil {
 		fmt.Fprintln(os.Stderr, "tplay:", err)
 		os.Exit(1)
 	}
+}
+
+// buildVersion returns the version without the leading "v", as the Makefile does.
+func buildVersion() string {
+	if version != "dev" {
+		return version
+	}
+	info, ok := debug.ReadBuildInfo()
+	if !ok || info.Main.Version == "" || info.Main.Version == "(devel)" {
+		return version
+	}
+	return strings.TrimPrefix(info.Main.Version, "v")
 }
 
 func run(target string) error {

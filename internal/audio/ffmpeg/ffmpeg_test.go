@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"tplay/internal/audio"
+	"github.com/Dawe257/tplay/internal/audio"
 )
 
 func TestLastMessage(t *testing.T) {

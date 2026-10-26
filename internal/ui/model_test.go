@@ -8,8 +8,8 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 
-	"tplay/internal/audio"
-	"tplay/internal/playlist"
+	"github.com/Dawe257/tplay/internal/audio"
+	"github.com/Dawe257/tplay/internal/playlist"
 )
 
 // fakePlayer records loads; tests set the status it reports.

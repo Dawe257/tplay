@@ -1,9 +1,11 @@
 PREFIX ?= $(HOME)/.local
+VERSION ?= $(patsubst v%,%,$(shell git describe --tags --always --dirty 2>/dev/null || echo dev))
+LDFLAGS := -X main.version=$(VERSION)
 
 .PHONY: build test lint install clean
 
 build:
-	go build -o tplay ./cmd/tplay
+	go build -ldflags "$(LDFLAGS)" -o tplay ./cmd/tplay
 
 test:
 	go test -race ./...
@@ -13,7 +15,7 @@ lint:
 	go vet ./...
 
 install:
-	go build -o $(PREFIX)/bin/tplay ./cmd/tplay
+	go build -ldflags "$(LDFLAGS)" -o $(PREFIX)/bin/tplay ./cmd/tplay
 
 clean:
 	rm -f tplay

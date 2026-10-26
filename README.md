@@ -13,6 +13,7 @@ Decoding is done by `ffmpeg`, so any format it supports plays.
 
 ```sh
 tplay <audio file or directory>
+tplay --version
 ```
 
 | Key             | Action                                                   |
@@ -28,9 +29,19 @@ tplay <audio file or directory>
 When a track ends the next one starts. A file that fails to play is skipped in
 the direction you last moved.
 
-## Build
+## Install
 
-Requires Go, `ffmpeg`/`ffprobe` and ALSA headers (`alsa-lib`).
+```sh
+go install github.com/Dawe257/tplay/cmd/tplay@latest
+```
+
+Requires Go, a C compiler and ALSA headers (`alsa-lib`) to build, and
+`ffmpeg`/`ffprobe` to play. The binary goes to `~/go/bin` (or `$GOBIN`), which
+should be in your `PATH`.
+
+## Build from source
+
+Same requirements as above.
 
 ```sh
 make test     # unit tests; the ffmpeg ones are skipped without ffmpeg

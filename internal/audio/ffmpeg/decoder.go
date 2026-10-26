@@ -11,7 +11,7 @@ import (
 	"strings"
 	"sync"
 
-	"tplay/internal/audio"
+	"github.com/Dawe257/tplay/internal/audio"
 )
 
 type Decoder struct {

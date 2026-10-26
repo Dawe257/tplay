@@ -8,7 +8,7 @@ import (
 
 	"github.com/ebitengine/oto/v3"
 
-	"tplay/internal/audio"
+	"github.com/Dawe257/tplay/internal/audio"
 )
 
 type Output struct {

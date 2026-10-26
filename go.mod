@@ -1,4 +1,4 @@
-module tplay
+module github.com/Dawe257/tplay
 
 go 1.27.3
 
