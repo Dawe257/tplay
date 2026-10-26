@@ -1,5 +1,7 @@
 # tplay
 
+[![CI](https://github.com/Dawe257/tplay/actions/workflows/ci.yml/badge.svg)](https://github.com/Dawe257/tplay/actions/workflows/ci.yml)
+
 Minimal terminal audio player. It plays the file you open and puts every audio
 file from the same directory into a playlist, without any library setup.
 
