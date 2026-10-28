@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-28
+
 ### Added
 
 - Prebuilt binaries for Linux and macOS (amd64 and arm64) on GitHub Releases,
   built by GoReleaser when a `v*` tag is pushed; the release notes are taken
   from this changelog.
+- `tplay` without an argument plays the current directory instead of printing
+  the usage.
 
 ## [0.1.1] - 2026-10-28
 
@@ -39,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CI on GitHub Actions runs `make lint` and `make test` on pushes to `main` and
   on pull requests.
 
-[Unreleased]: https://github.com/dzhenetl/tplay/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/dzhenetl/tplay/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/dzhenetl/tplay/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/dzhenetl/tplay/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/dzhenetl/tplay/releases/tag/v0.1.0

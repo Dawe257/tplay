@@ -26,11 +26,16 @@ func main() {
 		fmt.Println("tplay", buildVersion())
 		return
 	}
-	if len(os.Args) != 2 {
-		fmt.Fprintln(os.Stderr, "usage: tplay <audio file or directory>\n       tplay --version")
+	if len(os.Args) > 2 {
+		fmt.Fprintln(os.Stderr, "usage: tplay [audio file or directory]\n       tplay --version")
 		os.Exit(2)
 	}
-	if err := run(os.Args[1]); err != nil {
+	// Without an argument, play the current directory.
+	target := "."
+	if len(os.Args) == 2 {
+		target = os.Args[1]
+	}
+	if err := run(target); err != nil {
 		fmt.Fprintln(os.Stderr, "tplay:", err)
 		os.Exit(1)
 	}

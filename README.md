@@ -12,9 +12,11 @@ Decoding is done by `ffmpeg`, so any format it supports plays.
 ## Usage
 
 ```sh
-tplay <audio file or directory>
+tplay [audio file or directory]
 tplay --version
 ```
+
+Without an argument, `tplay` plays the current directory.
 
 | Key             | Action                                                   |
 |-----------------|----------------------------------------------------------|
