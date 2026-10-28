@@ -10,8 +10,8 @@ import (
 	"github.com/charmbracelet/bubbles/key"
 	tea "github.com/charmbracelet/bubbletea"
 
-	"github.com/Dawe257/tplay/internal/audio"
-	"github.com/Dawe257/tplay/internal/playlist"
+	"github.com/dzhenetl/tplay/internal/audio"
+	"github.com/dzhenetl/tplay/internal/playlist"
 )
 
 const (

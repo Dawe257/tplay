@@ -10,11 +10,11 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 
-	"github.com/Dawe257/tplay/internal/audio"
-	"github.com/Dawe257/tplay/internal/audio/ffmpeg"
-	"github.com/Dawe257/tplay/internal/audio/otoout"
-	"github.com/Dawe257/tplay/internal/playlist"
-	"github.com/Dawe257/tplay/internal/ui"
+	"github.com/dzhenetl/tplay/internal/audio"
+	"github.com/dzhenetl/tplay/internal/audio/ffmpeg"
+	"github.com/dzhenetl/tplay/internal/audio/otoout"
+	"github.com/dzhenetl/tplay/internal/playlist"
+	"github.com/dzhenetl/tplay/internal/ui"
 )
 
 // version is set at build time with -ldflags "-X main.version=...". Without

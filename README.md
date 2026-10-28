@@ -1,6 +1,6 @@
 # tplay
 
-[![CI](https://github.com/Dawe257/tplay/actions/workflows/ci.yml/badge.svg)](https://github.com/Dawe257/tplay/actions/workflows/ci.yml)
+[![CI](https://github.com/dzhenetl/tplay/actions/workflows/ci.yml/badge.svg)](https://github.com/dzhenetl/tplay/actions/workflows/ci.yml)
 
 Minimal terminal audio player. It plays the file you open and puts every audio
 file from the same directory into a playlist, without any library setup.
@@ -32,7 +32,7 @@ the direction you last moved.
 ## Install
 
 ```sh
-go install github.com/Dawe257/tplay/cmd/tplay@latest
+go install github.com/dzhenetl/tplay/cmd/tplay@latest
 ```
 
 Requires Go, a C compiler and ALSA headers (`alsa-lib`) to build, and
