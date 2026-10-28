@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Prebuilt binaries for Linux and macOS (amd64 and arm64) on GitHub Releases,
+  built by GoReleaser when a `v*` tag is pushed; the release notes are taken
+  from this changelog.
+
 ## [0.1.1] - 2026-10-28
 
 ### Changed
