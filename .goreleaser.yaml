@@ -1,0 +1,29 @@
+# Release config: `goreleaser release` builds the binaries and publishes them
+# to GitHub Releases. It runs from .github/workflows/release.yml on v* tags.
+version: 2
+
+project_name: tplay
+
+builds:
+  - main: ./cmd/tplay
+    # oto reaches ALSA through purego (dlopen) and PulseAudio in pure Go, so
+    # no cgo is needed and every target cross-compiles from one machine.
+    env:
+      - CGO_ENABLED=0
+    goos: [linux, darwin]
+    goarch: [amd64, arm64]
+    flags: [-trimpath]
+    ldflags:
+      - -s -w -X main.version={{ .Version }}
+
+archives:
+  - formats: [tar.gz]
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    files: [README.md, CHANGELOG.md]
+
+checksum:
+  name_template: checksums.txt
+
+# Release notes come from CHANGELOG.md (see the workflow), not from commits.
+changelog:
+  disable: true

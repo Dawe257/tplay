@@ -31,22 +31,44 @@ the direction you last moved.
 
 ## Install
 
+Playing needs `ffmpeg`/`ffprobe` in your `PATH` and ALSA or PulseAudio
+(PipeWire works through either).
+
+### Prebuilt binary
+
+[Releases](https://github.com/dzhenetl/tplay/releases) have archives for Linux
+and macOS on amd64 and arm64. Unpack one and put `tplay` in your `PATH`:
+
+```sh
+tar xzf tplay_*_linux_amd64.tar.gz tplay
+install -m 755 tplay ~/.local/bin/
+```
+
+### With Go
+
 ```sh
 go install github.com/dzhenetl/tplay/cmd/tplay@latest
 ```
 
-Requires Go, a C compiler and ALSA headers (`alsa-lib`) to build, and
-`ffmpeg`/`ffprobe` to play. The binary goes to `~/go/bin` (or `$GOBIN`), which
-should be in your `PATH`.
+The binary goes to `~/go/bin` (or `$GOBIN`), which should be in your `PATH`.
 
 ## Build from source
 
-Same requirements as above.
+Needs only Go: the sound libraries are loaded at run time, so no C compiler or
+ALSA headers are required.
 
 ```sh
 make test     # unit tests; the ffmpeg ones are skipped without ffmpeg
 make install  # builds into ~/.local/bin/tplay
 ```
+
+### Releasing
+
+Add the version's section to `CHANGELOG.md`, then push a `vX.Y.Z` tag. The
+release workflow runs GoReleaser (`.goreleaser.yaml`), which builds the
+archives and publishes them to GitHub Releases with that section as the notes.
+`goreleaser release --snapshot --clean` builds the same archives locally into
+`dist/`.
 
 ## Architecture
 
