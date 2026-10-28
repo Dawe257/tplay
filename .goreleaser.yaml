@@ -24,6 +24,7 @@ archives:
 checksum:
   name_template: checksums.txt
 
-# Release notes come from CHANGELOG.md (see the workflow), not from commits.
-changelog:
-  disable: true
+# Release notes come from CHANGELOG.md via --release-notes (see the workflow),
+# which replaces the commit-based changelog. Don't set changelog.disable: it
+# skips the whole pipe, --release-notes included, and the release body ends up
+# empty.
