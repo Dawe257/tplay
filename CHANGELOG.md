@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-28
+
+### Changed
+
+- The module moved to `github.com/dzhenetl/tplay` after the GitHub username
+  change; install with `go install github.com/dzhenetl/tplay/cmd/tplay@latest`.
+
 ## [0.1.0] - 2026-10-26
 
 ### Added
@@ -26,5 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CI on GitHub Actions runs `make lint` and `make test` on pushes to `main` and
   on pull requests.
 
-[Unreleased]: https://github.com/dzhenetl/tplay/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/dzhenetl/tplay/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/dzhenetl/tplay/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/dzhenetl/tplay/releases/tag/v0.1.0
