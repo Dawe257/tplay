@@ -38,6 +38,17 @@ Playing needs `ffmpeg`/`ffprobe` in your `PATH` and ALSA or PulseAudio
 
 ### Prebuilt binary
 
+Install the latest release into `~/.local/bin` (requires `curl`, `tar`, and
+`sha256sum` or macOS's `shasum`):
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/dzhenetl/tplay/main/install.sh | sh
+```
+
+The installer detects Linux/macOS and amd64/arm64, verifies the archive against
+the release's SHA-256 checksums, and warns if `ffmpeg`/`ffprobe` or the install
+directory in `PATH` is missing. It does not need `sudo`.
+
 [Releases](https://github.com/dzhenetl/tplay/releases) have archives for Linux
 and macOS on amd64 and arm64. Unpack one and put `tplay` in your `PATH`:
 
