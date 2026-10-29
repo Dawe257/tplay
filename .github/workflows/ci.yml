@@ -16,4 +16,6 @@ jobs:
       - name: Install system deps
         run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
       - run: make lint
+      - name: Test installer
+        run: python3 -m unittest discover -s tests -v
       - run: make test
