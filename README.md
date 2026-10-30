@@ -12,11 +12,19 @@ Decoding is done by `ffmpeg`, so any format it supports plays.
 ## Usage
 
 ```sh
-tplay [audio file or directory]
+tplay [-r] [audio file or directory]
 tplay --version
 ```
 
 Without an argument, `tplay` plays the current directory.
+
+Use `tplay -r music/` to include audio files from all subdirectories, or `tplay -r`
+to scan the current directory recursively. Tracks are sorted naturally by path,
+so `Disc 2/2.mp3` comes before `Disc 2/10.mp3` and `Disc 10/1.mp3`.
+Recursive scans skip symbolic links inside the tree and stop with an error if a
+directory cannot be read. The target directory itself may be a symbolic link.
+When opening an individual file, `-r` keeps the playlist limited to its
+siblings and starts playback at that file.
 
 | Key             | Action                                                   |
 |-----------------|----------------------------------------------------------|
